@@ -8,4 +8,5 @@
 *.code-workspace
 
 ## Untracked folders
-.ipynb_checkpoints/
+*.ipynb_checkpoints/
+*.vscode/
