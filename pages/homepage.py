@@ -92,13 +92,15 @@ layout = dbc.Container(
         ),
         dbc.Row(
             [
-                html.P("3 x (", className="operator"),
+                html.P("3 x", className="operator"),
+                html.P("(", className="parenthesis"),
                 get_form_col("Tuition per Year", "XX,XXX", input_id="tuition-input"),
                 html.P("+", className="operator"),
                 get_form_col("Fees per Year", "X,XXX", input_id="fees-input"),
                 html.P("+", className="operator"),
                 get_form_col("Cost of Living per Year", "X,XXX", input_id="col-input"),
-                html.P(")   -", className="operator"),
+                html.P(")", className="parenthesis"),
+                html.P(" -", className="operator"),
                 get_form_col("Scholarships/Grants (3yr Total)", "XX,XXX", input_id="grants-input"),
             ],
             justify="center",

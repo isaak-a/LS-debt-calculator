@@ -15,7 +15,13 @@
 .operator {
     font-size: 40px;
     font-weight: bold;
-    margin: 0px 20px;
+    margin: 7px 20px 0px;
+    white-space: pre;
+}
+.parenthesis {
+    font-size: 60px;
+    font-weight: bold;
+    margin: 0px 0px 0px;
     white-space: pre;
 }
 #debt-header {
