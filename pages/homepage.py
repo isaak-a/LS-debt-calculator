@@ -136,28 +136,49 @@ def deploy_homepage_callbacks(app):
         [Output(component_id="tuition-input", component_property="value"),
          Output("fees-input", "value"),
          Output("col-input", "value"),
-         Output("grants-input", "value"),
-         Output("debt-total", "children"),],
+         Output("grants-input", "value"),],
 
         [Input("school-dropdown", "value")]
     ) #pylint: disable=unused-variable
-    def update_formula(school):
+    def update_formula_auto(school):
         if school:
             tuition = school_df.loc[school, "tuition_per_year"]
             fees = school_df.loc[school, "fees_per_year"]
             col = school_df.loc[school, "col_off_campus"]
             grant = school_df.loc[school, "median_grant"]
 
-            debt = 3*(tuition + fees + col) - grant
-
-            num_list = [tuition, fees, col, grant, debt]
+            num_list = [tuition, fees, col, grant]
 
             # Format numbers with commas for output
             return_list = ["{:,.2f}".format(num) for num in num_list]
 
-            # Add dollar sign to debt
-            return_list[4] = "$" + return_list[4]
-
             return return_list
         else:
-            return [None]*4 + ["$XXX,XXX"]
+            return [None]*4
+
+
+    @app.callback(
+        [Output("debt-total", "children"),],
+
+        [Input("tuition-input", "value"),
+         Input("fees-input", "value"),
+         Input("col-input", "value"),
+         Input("grants-input", "value"),]
+    ) #pylint: disable=unused-variable
+    def update_formula_input(tuition, fees, col, grants):
+        if (tuition and fees and col and grants):
+            # Clean inputs
+            inputs = {
+                "tuition":tuition,
+                "fees":fees,
+                "col":col,
+                "grants":grants
+            }
+
+            inputs = {k: float(v.replace(",", "")) for k, v in inputs.items()}
+
+            debt = 3*(inputs["tuition"] + inputs["fees"] + inputs["col"]) - inputs["grants"]
+            
+            return ["${:,.2f}".format(debt)]
+        else:
+            return ["$XXX,XXX"]
