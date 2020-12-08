@@ -10,3 +10,4 @@
 ## Untracked folders
 *.ipynb_checkpoints/
 *.vscode/
+*__pycache__/

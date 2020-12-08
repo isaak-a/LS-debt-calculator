@@ -1,0 +1,33 @@
+#homepage-header {
+    /* color: #13752b; */
+    text-align: center;
+    margin: 50px 30px 0px;
+}
+#school-dropdown {
+    width: 100%;
+}
+.form-col {
+    text-align: center;
+}
+.homepage-row {
+    margin: 60px 0px;
+}
+.operator {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0px 20px;
+    white-space: pre;
+}
+#debt-header {
+    text-align: center;
+    margin-bottom: 0px;
+    font-style: italic;
+}
+#debt-total {
+    text-align: center;
+    font-size: 100px;
+    font-weight: bold;
+}
+#debt-row {
+    margin-top: 100px;
+}
