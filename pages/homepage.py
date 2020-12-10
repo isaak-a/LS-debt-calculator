@@ -113,7 +113,7 @@ layout = dbc.Container(
                     html.P("Estimated Debt", id="debt-header"),
                     html.P("$XXX,XXX", id="debt-total")
                 ],
-                width=4
+                width=6
             ),
             justify="center",
             className="homepage-row",
