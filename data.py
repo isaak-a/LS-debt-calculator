@@ -1,14 +1,12 @@
 import pandas as pd
 import psycopg2
 
-from dotenv import find_dotenv, dotenv_values
+import os
 
 
 def get_db_conn():
-    dotenv_dict = dotenv_values(stream=find_dotenv())
-
     user = "isaak"
-    password = dotenv_dict["PG_PASSWORD"]
+    password = os.environ["PG_PASSWORD"]
 
     return psycopg2.connect(
         host="localhost",
