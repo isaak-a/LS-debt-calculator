@@ -20,11 +20,11 @@ h1 { font-size: 2.5vw; }
 .operator {
     font-size: 3vw;
     font-weight: bold;
-    margin: 7px 20px 0px;
+    margin: 9px 20px 0px;
     white-space: pre;
 }
 .parenthesis {
-    font-size: 60px;
+    font-size: 4.5vw;
     font-weight: bold;
     margin: 0px 0px 0px;
     white-space: pre;
