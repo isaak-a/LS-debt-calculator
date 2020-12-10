@@ -24,9 +24,11 @@ def create_app(server=None):
 
     return dash_app
 
+app = create_app()
+
+server = app.server
 
 if __name__ == '__main__':
-    app = create_app()
     app.run_server(
         debug=True,
         dev_tools_ui=True,
