@@ -5,15 +5,8 @@ import os
 
 
 def get_db_conn():
-    user = "isaak"
-    password = os.environ["PG_PASSWORD"]
-
-    return psycopg2.connect(
-        host="localhost",
-        database="law-school-data",
-        user=user,
-        password=password
-    )
+    conn_string = os.environ["DATABASE_URL"]
+    return psycopg2.connect(conn_string)
 
 def get_homepage_data():
     db_conn = get_db_conn()
