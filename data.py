@@ -7,7 +7,7 @@ from dotenv import find_dotenv, dotenv_values
 def get_db_conn():
     dotenv_dict = dotenv_values(stream=find_dotenv())
 
-    user = "postgres"
+    user = "isaak"
     password = dotenv_dict["PG_PASSWORD"]
 
     return psycopg2.connect(
