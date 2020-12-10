@@ -13,8 +13,8 @@ except:
     from pages import homepage
 
 
-def create_app(server=None):
-    dash_app = get_dash_app(server)
+def create_app():
+    dash_app = get_dash_app()
 
     dash_app.layout = homepage.layout
 
