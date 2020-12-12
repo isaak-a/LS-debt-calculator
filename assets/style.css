@@ -1,5 +1,3 @@
-body { font-size: 1vw; }
-h1 { font-size: 2.5vw; }
 #homepage-header {
     text-align: center;
     margin: 8vh .5vh 0vh;
@@ -36,9 +34,31 @@ h1 { font-size: 2.5vw; }
 }
 #debt-total {
     text-align: center;
-    font-size: 7vw;
     font-weight: bold;
 }
 #debt-row {
-    margin-top: 100px;
+    margin-top: 5vh;
+}
+@media screen and (max-width: 600px) {
+    body { font-size: 3.5vw; }
+    h1 { font-size: 7vw; }
+    .operator {
+        display: none;
+    }
+    .parenthesis {
+        display: none;
+    }
+    #debt-total {
+        font-size: 14vw;
+    }
+    .homepage-form {
+        margin-bottom: 3vh
+    }
+}
+@media screen and (min-width: 600px) {
+    body { font-size: 1vw; }
+    h1 { font-size: 2.5vw; }
+    #debt-total {
+        font-size: 7vw;
+    }
 }

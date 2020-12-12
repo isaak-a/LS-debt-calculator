@@ -62,7 +62,8 @@ def get_form(label, placeholder, input_id=""):
 def get_form_col(label, placeholder, input_id=""):
     return dbc.Col(
         get_form(label, placeholder, input_id=input_id),
-        width=2,
+        sm=2,
+        xs=11,
         className="form-col"
     )
 
@@ -85,7 +86,8 @@ layout = dbc.Container(
         dbc.Row(
             dbc.Col(
                 school_dropdown,
-                width=4
+                sm=4,
+                xs=11
             ),
             justify="center",
             className="homepage-row"
@@ -113,7 +115,8 @@ layout = dbc.Container(
                     html.P("Estimated Debt", id="debt-header"),
                     html.P("$XXX,XXX", id="debt-total")
                 ],
-                width=6
+                sm=6,
+                xs=11
             ),
             justify="center",
             className="homepage-row",
