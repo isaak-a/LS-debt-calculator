@@ -4,13 +4,8 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 
 # Local imports
-try:
-    # pylint: disable=relative-beyond-top-level
-    from .app import get_dash_app
-    from .pages import homepage
-except:
-    from app import get_dash_app
-    from pages import homepage
+from app import get_dash_app
+from pages import homepage
 
 
 def create_app():

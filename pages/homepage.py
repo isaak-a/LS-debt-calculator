@@ -10,11 +10,7 @@ import numpy as np
 import pandas as pd
 
 # Load local modules
-try:
-    # pylint: disable=relative-beyond-top-level
-    from ..data import get_homepage_data
-except:
-    from data import get_homepage_data
+from data import get_homepage_data
 
 
 
