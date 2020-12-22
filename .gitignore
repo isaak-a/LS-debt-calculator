@@ -6,6 +6,7 @@
 *.html
 *.pdf
 *.code-workspace
+*.DS_Store
 
 ## Untracked folders
 *.ipynb_checkpoints/
