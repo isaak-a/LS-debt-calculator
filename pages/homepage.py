@@ -141,8 +141,8 @@ def deploy_homepage_callbacks(app):
     ) #pylint: disable=unused-variable
     def update_formula_auto(school):
         if school:
-            tuition = school_df.loc[school, "tuition_per_year"]
-            fees = school_df.loc[school, "fees_per_year"]
+            tuition = school_df.loc[school, "tuition_year_nonres"]
+            fees = school_df.loc[school, "fees_year_nonres"]
             col = school_df.loc[school, "col_off_campus"]
             grant = school_df.loc[school, "median_grant"]
 
