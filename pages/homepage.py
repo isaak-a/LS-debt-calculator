@@ -59,13 +59,18 @@ def get_plusminus(sign):
         width="auto"
     )
 
-def get_form(label, placeholder, input_id=""):
+def get_form(label, placeholder, input_id="", multiplier=True):
+    if multiplier:
+        multi_col = get_multiplier()
+    else:
+        multi_col = html.Div()
+    
     return dbc.FormGroup(
         [
             dbc.Label(label, className="form-label"),
             dbc.Row(
                 [
-                    get_multiplier(),
+                    multi_col,
                     dbc.Col(
                         dbc.InputGroup(
                             [
@@ -76,7 +81,10 @@ def get_form(label, placeholder, input_id=""):
                                     className="form-input"
                                 ),
                             ]
-                        )
+                        ),
+                        # This would be to limit final form to same size as others on mobile
+                        # lg=True,
+                        # xs=10
                     )
                 ],
                 justify="center",
@@ -88,9 +96,9 @@ def get_form(label, placeholder, input_id=""):
     )
 
 
-def get_form_col(label, placeholder, input_id=""):
+def get_form_col(label, placeholder, input_id="", multiplier=True):
     return dbc.Col(
-        get_form(label, placeholder, input_id=input_id),
+        get_form(label, placeholder, input_id=input_id, multiplier=multiplier),
         lg=2,
         xs=12,
         className="form-col"
@@ -132,7 +140,7 @@ layout = dbc.Container(
                 get_form_col("Cost of Living per Year", "X,XXX", input_id="col-input"),
                 dbc.Col(html.P(")", className="eq-text parenthesis"), width="auto"),
                 get_plusminus("-"),
-                get_form_col("Scholarships/Grants (3yr Total)", "XX,XXX", input_id="grants-input"),
+                get_form_col("Scholarships/Grants (3yr Total)", "XX,XXX", input_id="grants-input", multiplier=False),
             ],
             justify="center",
             align="center",
