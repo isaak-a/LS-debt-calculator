@@ -12,8 +12,8 @@
 .form-label {
     overflow: hidden;
     white-space: nowrap;
-    margin-left: -100%;
-    margin-right: -100%;
+    margin-left: -20%;
+    margin-right: -20%;
 }
 .homepage-row {
     margin: 60px 0px;
