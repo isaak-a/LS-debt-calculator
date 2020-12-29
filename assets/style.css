@@ -75,6 +75,10 @@
     }
     #debt-total {
         font-size: 14vw;
+        overflow: hidden;
+        white-space: nowrap;
+        margin-left: -100%;
+        margin-right: -100%;
     }
     .large-only {
         display: None;
