@@ -1,31 +1,44 @@
 #homepage-header {
     text-align: center;
-    margin: 8vh .5vh 0vh;
+    margin: 6rem 0rem 0rem;
 }
 #school-dropdown {
     width: 100%;
 }
 .form-col {
     text-align: center;
+    padding: 0px 10px;
 }
 .form-label {
     overflow: hidden;
     white-space: nowrap;
+    margin-left: -100%;
+    margin-right: -100%;
 }
 .homepage-row {
     margin: 60px 0px;
 }
-.operator {
+.homepage-form {
+    padding-bottom: calc(.5em + .25rem + 1px);
+}
+.eq-text {
     font-size: 3vw;
     font-weight: bold;
-    margin: 9px 20px 0px;
     white-space: pre;
+    display: table-cell;
+    padding: 0px 25px;
+}
+.constant {
+    padding: 0px
+}
+.multiplier {
+    font-size: 2.25vw;
+    padding: 0px 5px;
+    vertical-align: middle;
 }
 .parenthesis {
-    font-size: 4.5vw;
-    font-weight: bold;
-    margin: 0px 0px 0px;
-    white-space: pre;
+    font-size: 4rem;
+    padding: 0px 0px 5px 0px;
 }
 #debt-header {
     text-align: center;
@@ -37,28 +50,43 @@
     font-weight: bold;
 }
 #debt-row {
-    margin-top: 5vh;
+    margin-top: 5rem;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 991px) {
     body { font-size: 3.5vw; }
     h1 { font-size: 7vw; }
-    .operator {
-        display: none;
+    .homepage-form {
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+    }
+    .eq-text {
+        font-size: 2rem;
+    }
+    .multiplier {
+        font-size: 1.5rem;
     }
     .parenthesis {
         display: none;
     }
+    .plusminus {
+        width: 100vw;
+        text-align: center;
+        padding: .75rem 0rem;
+    }
     #debt-total {
         font-size: 14vw;
     }
-    .homepage-form {
-        margin-bottom: 4vh
+    .large-only {
+        display: None;
     }
 }
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 991px) {
     body { font-size: 1vw; }
     h1 { font-size: 2.5vw; }
     #debt-total {
         font-size: 7vw;
+    }
+    .mobile-only {
+        display: none;
     }
 }

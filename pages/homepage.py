@@ -35,20 +35,53 @@ school_dropdown = dcc.Dropdown(
     multi=False
 )
 
+def get_multiplier(mobile=True):
+    if mobile:
+        col_class = "mobile-only"
+    else:
+        col_class = "large-only"
+    
+    return dbc.Col(
+            html.Span(
+            [
+                html.P("3", className=f"eq-text constant"),
+                html.P("×", className=f"eq-text multiplier")
+            ],
+            className="multiplier-span"
+        ),
+        className=col_class,
+        width="auto"
+    )
+
+def get_plusminus(sign):
+    return dbc.Col(
+        html.P(sign, className="eq-text plusminus"),
+        width="auto"
+    )
 
 def get_form(label, placeholder, input_id=""):
     return dbc.FormGroup(
         [
             dbc.Label(label, className="form-label"),
-            dbc.InputGroup(
+            dbc.Row(
                 [
-                    dbc.InputGroupAddon("$", addon_type="prepend"),
-                    dbc.Input(
-                        id=input_id,
-                        placeholder=placeholder,
-                        className="form-input"
-                    ),
-                ]
+                    get_multiplier(),
+                    dbc.Col(
+                        dbc.InputGroup(
+                            [
+                                dbc.InputGroupAddon("$", addon_type="prepend"),
+                                dbc.Input(
+                                    id=input_id,
+                                    placeholder=placeholder,
+                                    className="form-input"
+                                ),
+                            ]
+                        )
+                    )
+                ],
+                justify="center",
+                align="center",
+                no_gutters=True
             )
         ],
         className="homepage-form"
@@ -58,8 +91,8 @@ def get_form(label, placeholder, input_id=""):
 def get_form_col(label, placeholder, input_id=""):
     return dbc.Col(
         get_form(label, placeholder, input_id=input_id),
-        sm=2,
-        xs=11,
+        lg=2,
+        xs=12,
         className="form-col"
     )
 
@@ -82,7 +115,7 @@ layout = dbc.Container(
         dbc.Row(
             dbc.Col(
                 school_dropdown,
-                sm=4,
+                lg=4,
                 xs=11
             ),
             justify="center",
@@ -90,20 +123,21 @@ layout = dbc.Container(
         ),
         dbc.Row(
             [
-                html.P("3 x", className="operator"),
-                html.P("(", className="parenthesis"),
+                get_multiplier(mobile=False),
+                dbc.Col(html.P("(", className="eq-text parenthesis"), width="auto"),
                 get_form_col("Tuition per Year", "XX,XXX", input_id="tuition-input"),
-                html.P("+", className="operator"),
+                get_plusminus("+"),
                 get_form_col("Fees per Year", "X,XXX", input_id="fees-input"),
-                html.P("+", className="operator"),
+                get_plusminus("+"),
                 get_form_col("Cost of Living per Year", "X,XXX", input_id="col-input"),
-                html.P(")", className="parenthesis"),
-                html.P(" -", className="operator"),
+                dbc.Col(html.P(")", className="eq-text parenthesis"), width="auto"),
+                get_plusminus("-"),
                 get_form_col("Scholarships/Grants (3yr Total)", "XX,XXX", input_id="grants-input"),
             ],
             justify="center",
             align="center",
-            className="homepage-row"
+            className="homepage-row",
+            no_gutters=True
         ),
         dbc.Row(
             dbc.Col(
@@ -111,7 +145,7 @@ layout = dbc.Container(
                     html.P("Estimated Debt", id="debt-header"),
                     html.P("$XXX,XXX", id="debt-total")
                 ],
-                sm=6,
+                lg=6,
                 xs=11
             ),
             justify="center",
