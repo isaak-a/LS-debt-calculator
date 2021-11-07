@@ -13,7 +13,6 @@ def create_app():
     return dash_app
 
 app = create_app()
-
 server = app.server
 
 if __name__ == '__main__':
