@@ -1,9 +1,3 @@
-# Dash libraries
-import dash_core_components as dcc
-import dash_html_components as html
-from dash.dependencies import Input, Output
-
-# Local imports
 from app import get_dash_app
 from pages import homepage
 
@@ -12,7 +6,6 @@ def create_app():
     dash_app = get_dash_app()
 
     dash_app.layout = homepage.layout
-
     dash_app.title = "Law School Debt Calculator"
 
     homepage.deploy_homepage_callbacks(dash_app)

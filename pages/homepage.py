@@ -1,15 +1,9 @@
-# Load dash libraries
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
 import dash_bootstrap_components as dbc
-from dash.dependencies import Input, Output, State
+from dash.dependencies import Input, Output
 
-# Load data libraries
-import numpy as np
-import pandas as pd
-
-# Load local modules
 from data import get_homepage_data
 
 
@@ -81,10 +75,7 @@ def get_form(label, placeholder, input_id="", multiplier=True):
                                     className="form-input"
                                 ),
                             ]
-                        ),
-                        # This would be to limit final form to same size as others on mobile
-                        # lg=True,
-                        # xs=10
+                        )
                     )
                 ],
                 justify="center",
@@ -180,7 +171,7 @@ def deploy_homepage_callbacks(app):
          Output("grants-input", "value"),],
 
         [Input("school-dropdown", "value")]
-    ) #pylint: disable=unused-variable
+    )
     def update_formula_auto(school):
         if school:
             tuition = school_df.loc[school, "tuition_year_nonres"]
@@ -205,7 +196,7 @@ def deploy_homepage_callbacks(app):
          Input("fees-input", "value"),
          Input("col-input", "value"),
          Input("grants-input", "value"),]
-    ) #pylint: disable=unused-variable
+    )
     def update_formula_input(tuition, fees, col, grants):
         if (tuition and fees and col and grants):
             # Clean inputs
