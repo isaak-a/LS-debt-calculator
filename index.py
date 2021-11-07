@@ -21,5 +21,5 @@ if __name__ == '__main__':
         debug=True,
         dev_tools_ui=True,
         port=8050,
-        host='127.0.0.1'
+        host='localhost'
     )
