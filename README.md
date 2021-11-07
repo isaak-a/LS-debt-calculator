@@ -1,6 +1,12 @@
 # Law School Debt Calculator
 
-This repository contains all of the code for lsdebt.com, a website to help future law students (or those just considering law school) **quickly and easily estimate law school costs**. 
+This repository contains all of the code for [lsdebt.com](https://lsdebt.com), a website to help future law students (or those just considering law school) **quickly and easily estimate law school costs**. 
+
+## The Site
+
+[lsdebt.com](https://lsdebt.com) is built with [Plotly Dash](https://plotly.com/dash/), a framework for building dashboards. 
+
+It's currently deployed on [Heroku](https://www.heroku.com/). 
 
 ## Running Locally
 
