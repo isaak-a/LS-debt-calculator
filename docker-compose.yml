@@ -4,13 +4,17 @@ services:
 
   dash:
     build: .
+    container_name: dash
+    depends_on:
+      - postgres
     ports:
       - "8050:8050"
     environment:
-      - DATABASE_URL="postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}"
+      - DATABASE_URL=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}
 
   postgres:
     image: postgres:14.0-bullseye
+    container_name: postgres
     ports:
       - "5432:5432"
     volumes:
