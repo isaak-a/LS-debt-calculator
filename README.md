@@ -10,9 +10,37 @@ It's currently deployed on [Heroku](https://www.heroku.com/).
 
 ## Running Locally
 
-Working on it. I swear. 
+First, check out this repository, then open a terminal and `cd` to the repo's root directory. 
 
-I'm migrating everything to Docker for reproducibility. 
+Then copy the example `.env` file and choose a username, password, and database name (doesn't matter too much for just running locally):
+
+```bash
+cp .env.example .env
+```
+
+Fill out `.env` like so: 
+
+```
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_USER=<insert username>
+POSTGRES_PASSWORD=<insert password>
+POSTGRES_DB=<pick a db name - mine's 'law-school-data'>
+```
+
+Build the images: 
+
+```bash
+docker-compose build
+```
+
+Then finally run the container: 
+
+```bash
+docker-compose up
+```
+
+Open up <http://localhost:8050> in a browser to view the site. It won't have any data available yet - I'm working on a script to conveniently load the database from publicly available data. 
 
 ## About the Data
 
