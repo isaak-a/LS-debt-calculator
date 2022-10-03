@@ -51,6 +51,6 @@ Currently, data comes from two places:
 
 ## About the Project
 
-Funnily enough, I am not (nor do I ever plan to be) a law student! I built this project to help my girlfriend as she went through the law school process, so that she could easily compare the costs of various law schools, including scholarships and cost of living. 
+Funnily enough, I am not (nor do I ever plan to be) a law student! I built this project to help a good friend as they went through the law school process, so that they could easily compare the costs of various law schools, including scholarships and cost of living. 
 
 I thought maybe it could be of some use to other law students, so left the website up. Suggestions and improvement ideas more than welcome! Feel free to make an Issue right here in this repo. 
